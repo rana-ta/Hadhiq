@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Customer Homepage</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="img/Hadhiq2.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="img/Hadhiq2.png" sizes="16x16" />
+    
+    <script>
+        function DirectToSrvices(){
+            let searchInput = document.querySelector(".search-bar").value.trim();
+            if ( searchInput ===""){
+                alert("Please enter the services in the search bar, then click search.")
+            }else{
+            window.location.href="Customer_Services.html"
+            }
+        }   
+    
+        
+    </script>
+    </head>
+
+    <body>
+
+    
+		<nav> 
+            <a href="Customer_Homepage.html"><img id="logo"src="img/HadhiqBG.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="Customer_Homepage.html" class = "active">Home</a></li>
+                    <li><a href="Service_Booking.html">Book a Service</a></li>
+                    <li><a href="MyBooking.html">My Bookings</a></li>
+                    <li><a href="profileC.html">Profile</a></li>
+                    <li><a href="index.html">Log out</a></li>
+        
+        
+                </ul>
+            </div>
+        </nav>
+     
+    <header class="search-header">
+        <div class="search-container">
+            <div class="search-text">
+                <h1>
+                    Discover Top-Rated Home Services
+                </h1>
+             </div>
+            <div class="search-bar-container"> 
+            <input type="text" class="search-bar" placeholder="Search for a service...">
+            <button class="search-button" onclick="DirectToSrvices()">Search</button>
+        </div>
+        </div>
+    </header>  
+    <div class="services-container">
+        <div class = "service-box">
+            <img src="img/cleaning.png" alt="cleaning service">
+            <h3>Cleaning</h3>
+            <p>Professional home and office cleaning services</p>
+        </div>            
+    
+        <div class = "service-box">
+            <img src="img/mechanic.png" alt="mechanic service">
+            <h3>Mechanic</h3>
+            <p>Expert Mechanic solutions for your home</p>
+        </div> 
+        
+        <div class = "service-box">
+            <img class = "service-img" src="img/electrician.png" alt="electrical service">
+            <h3>Electrical</h3>
+            <p>Reliable electrical installations and repairs</p>
+        </div> 
+
+        <div class = "service-box">
+            <img src="img/trimming.png" alt="Gardening service">
+            <h3>Gardening</h3>
+            <p>Transform your garden with professional care</p>
+        </div>     
+    
+    </div> 
+    <br><br><br><br>
+   
+</body>
+        <footer>
+            <hr>
+            
+            <h4>Contact Us At: </h4>
+            <h4>support@Hadhiq.com</h4>
+            
+            <br>
+            <div class="footer-bottom">
+                © 2025 Hadhiq - All Rights Reserved
+            </div>
+        </footer>
+</html>

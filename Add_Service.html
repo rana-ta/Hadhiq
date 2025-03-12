@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Service Provider Home</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="img/Hadhiq2.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="img/Hadhiq2.png" sizes="16x16" />
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const form = document.getElementById("addServiceForm");
+    
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+    
+                    const name = document.getElementById("serviceName").value.trim();
+                    const location = document.getElementById("serviceLocation").value.trim();
+                    const imageInput = document.getElementById("serviceImage");
+    
+                    if (!name || !location || !imageInput.files[0]) {
+                        alert("Please fill in all fields.");
+                        return;
+                    }
+    
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const image = e.target.result;
+                        const services = JSON.parse(localStorage.getItem("services")) || [];
+    
+                        const newService = {
+                            name,
+                            location,
+                            image
+                        };
+    
+                        services.push(newService);
+                        localStorage.setItem("services", JSON.stringify(services));
+    
+                        alert(`Service "${name}" added successfully!`);
+                        form.reset();
+                    };
+                    reader.readAsDataURL(imageInput.files[0]);
+                });
+            });
+        </script>
+    <style>
+        .button{
+         background-color:#081833 !important;
+         border:  0.125rem solid  #004369 !important;
+
+         border-radius:  0.625rem;
+          color:white !important;
+         cursor: pointer;
+           
+         transition-duration: 0.2s;
+            text-decoration: none; 
+        padding:2%;
+        margin: 20px;   
+        text-align: center;
+       
+       }
+      
+       .button:hover{
+         background-color: #004369 !important;
+         border:  0.125rem solid  #004369 !important;
+       color: #081833;
+       }
+     </style>
+    </head>
+    <body>
+
+    </body>
+    
+		<nav> 
+			<a href="Provider_Homepage.html"><img id="logo"src="img/HadhiqBG.png"></a>
+			<div class="nav-links">
+				<ul>
+					<li><a href="Provider_Homepage.html" class = "active">Home</a></li>
+		 			<li><a href="UpCoomingBooking.html">Upcoming Bookings</a></li>
+                    <li><a href="profileS.html">Profile</a></li>
+                    <li><a href="index.html">Log out</a></li>
+        </ul>
+		  </div>
+		</nav>
+   <br><br>
+   <div class="breadcrumb">
+    <a href="Provider_Homepage.html" accesskey="h">Home</a><span> &gt;&gt;</span> <span id="thispage">Add a Service</span>
+        </div>
+   <h1 class="company"> Company X Services</h1>
+   <br><br>
+   <form id="addServiceForm" enctype="multipart/form-data">
+    <fieldset class="group">
+        <legend>Add a New Service</legend>
+        <label for="serviceName">Service Name:</label>
+        <input type="text" id="serviceName" name="serviceName"><br><br>
+
+        <label for="serviceLocation">Location:</label>
+        <input type="text" id="serviceLocation" name="serviceLocation"><br><br>
+
+        <label for="serviceImage">Service Image:</label>
+        <input type="file" id="serviceImage" name="serviceImage" accept="image/*"><br><br>
+
+       
+      <input type="submit" class="button" value="Add Service" >
+    
+    </fieldset>
+</form>
+    <footer>
+        <hr>
+        
+        <h4>Contact Us At: </h4>
+        <h4>support@Hadhiq.com</h4>
+    
+        <br>
+        <div class="footer-bottom">
+            © 2025 Hadhiq - All Rights Reserved
+        </div>
+    </footer>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Service Provider Profile</title>
+    <style>
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Rowdies", "cursive";
+    color: #004369;
+}
+html, body {
+  margin:0px;
+  height:100%;
+  bottom:100%;
+}
+body {
+    background-color: #fff9f0;
+	box-sizing: border-box;
+	
+}
+.headers{
+	min-height: 40%;
+	width: 100%;    
+	                  
+}
+#logo{
+	max-width:170px;
+}
+nav{
+	display: flex;
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+.nav-links{
+	flex: 1;
+	text-align: right;
+}
+
+.nav-links ul{
+	display: flex;
+	justify-content: flex-end;
+	white-space: nowrap;
+	width: 100%;
+	
+}
+
+.nav-links ul li {
+	display: inline-block;
+	padding: 15px 20px;
+	font-family:"Rowdies", "cursive";
+}
+.nav-links ul li a{
+	
+	text-decoration: none;
+	font-size: 16px;
+}
+.nav-links ul li a.active {
+	border-bottom: 3px solid #922c40;
+	font-weight: bold;
+}
+.nav-links ul li::after{
+	content: '';
+	width: 0%;
+	height: 2px;
+	background:  #922c40;
+	border: #922c40;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+	width:100%
+}
+@media(max-width:1400px)  {
+	nav{
+		width: 80%;
+	}
+	.nav-links ul{
+		justify-self: space-around;
+	}
+	
+	.nav-links ul li{
+		padding: 10px 15px ;
+	}
+}
+
+/*--------------------------FOOTER---------------------------*/
+footer{
+	width: 100%;
+	text-align:center;
+    
+}
+footer h4, h5{
+	margin-top: 20px;
+	margin-bottom:10px;
+	margin-top:10px;
+
+	font-weight: 600;
+
+}
+.footer-bottom {
+	text-align: center;
+	padding: 15px 0;
+	font-size: 14px;
+	color: #777;
+	background-color: #faefe0;
+}
+	
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .profile-container {
+            width: 50%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .profile-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            position: relative;
+        }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .edit-profile {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #952544;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+		
+		.profile-info i {
+         color: #952544;
+             }
+			 
+			 /* Hide the scrollbar completely */
+.review-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-top: 10px;
+    scroll-behavior: smooth;
+    
+    /* Hides scrollbar for all browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 11 */
+}
+
+/* Hides scrollbar for Chrome, Edge, Safari */
+.review-container::-webkit-scrollbar {
+    display: none;
+}
+
+  
+        .edit-profile:hover {
+            background: #0056b3;
+        }
+        .profile-info {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+        }
+        .profile-info input {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .save-btn {
+            display: none;
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .save-btn:hover {
+            background: #218838;
+        }
+        .reviews {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        .reviews h3 {
+            font-size: 18px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .review-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-top: 10px;
+            scroll-behavior: smooth;
+        }
+        .review {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 250px;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            position: relative;
+        }
+        .review img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border: 2px solid white;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        .review-content {
+            padding-left: 50px; /* Makes space for the image */
+        }
+        .stars {
+            color: gold;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<header>
+    <nav> 
+        <a href="Provider_Homepage.html"><img id="logo"src="img/HadhiqBG.png"></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="Provider_Homepage.html">Home</a></li>
+                <li><a href="UpCoomingBooking.html">Upcoming Bookings</a></li>
+                <li><a href="profileS.html"  class = "active">Profile</a></li>
+                <li><a href="index.html">Log out</a></li>
+    </ul>
+      </div>
+    </nav>
+<br><br>
+</header>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="img/user.jpg" alt="Service Provider" class="profile-pic">
+            <button class="edit-profile" onclick="editProfile()">✎</button>
+            <h2 id="provider-name">John Doe</h2>
+        </div>
+
+        <div class="profile-info" id="profile-info">
+            <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> <span id="location">Riyadh, Saudi Arabia</span></p>
+            <p><strong><i class="fas fa-envelope"></i> Email:</strong> <span id="email">johndoe@example.com</span></p>
+            <p><strong><i class="fas fa-phone"></i> Phone:</strong> <span id="phone">+966 555 123 456</span></p>
+            <p><strong><i class="fas fa-briefcase"></i> Business Name:</strong> <span id="business">JD Plumbing Services</span></p>
+            <p><strong><i class="fas fa-id-badge"></i> Business License:</strong> <span id="license">LIC-123456</span></p>
+        </div>
+        <button class="save-btn" id="save-btn" onclick="saveProfile()">Save Changes</button>
+
+        
+        <div class="reviews">
+            <h3>⭐  Customer Reviews</h3>
+            <div class="review-container">
+                <div class="review">
+                    <img src="https://th.bing.com/th/id/OIP.cRT6RCVvwHTayfPtBx1GOAHaE8?rs=1&pid=ImgDetMain" alt="Sarah A.">
+                    <div class="review-content">
+                        <strong>Sarah A.</strong>
+                        <p>Great service! Fixed my plumbing issues quickly. Highly recommend!</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="review">
+                    <img src="https://i.pinimg.com/originals/f3/ba/c2/f3bac2faf41d91fd48e6abfbe3fd8b8f.jpg" alt="Mohammed K.">
+                    <div class="review-content">
+                        <strong>Mohammed K.</strong>
+                        <p>Very professional and reliable. Will book again.</p>
+                        <div class="stars">★★★★☆</div>
+                    </div>
+                </div>
+                <div class="review">
+                    <img src="https://th.bing.com/th/id/OIP.JkcYOovXGNijhryz145aHwHaEK?rs=1&pid=ImgDetMain" alt="Aisha B.">
+                    <div class="review-content">
+                        <strong>Aisha B.</strong>
+                        <p>On time and efficient. Great work!</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function editProfile() {
+            let fields = ['location', 'email', 'phone', 'business', 'license'];
+            fields.forEach(id => {
+                let element = document.getElementById(id);
+                let text = element.innerText;
+                element.innerHTML = `<input type='text' value='${text}'>`;
+            });
+            document.getElementById('save-btn').style.display = 'block';
+        }
+
+        function saveProfile() {
+            let fields = ['location', 'email', 'phone', 'business', 'license'];
+            fields.forEach(id => {
+                let element = document.getElementById(id);
+                let input = element.querySelector('input');
+                element.innerText = input.value;
+            });
+            document.getElementById('save-btn').style.display = 'none';
+        }
+    </script>
+</body>
+<footer>
+        <hr>
+                
+        <h4>Contact Us At: </h4>
+        <h4>support@Hadhiq.com</h4>
+        <br>
+        <div class="footer-bottom">
+            © 2025 Hadhiq - All Rights Reserved
+        </div>
+    </footer>
+
+</html>

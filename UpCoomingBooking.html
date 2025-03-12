@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Bookings</title>
+    <style>
+	
+	
+	
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Rowdies", "cursive";
+    color: #004369;
+}
+html, body {
+  margin:0px;
+  height:100%;
+  bottom:100%;
+}
+body {
+    background-color: #fff9f0;
+	
+	box-sizing: border-box;
+	
+}
+.headers{
+	min-height: 40%;
+	width: 100%;    
+	                  
+}
+#logo{
+	max-width:170px;
+}
+nav{
+	display: flex;
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+.nav-links{
+	flex: 1;
+	text-align: right;
+}
+
+.nav-links ul{
+	display: flex;
+	justify-content: flex-end;
+	white-space: nowrap;
+	width: 100%;
+	
+}
+
+.nav-links ul li {
+	display: inline-block;
+	padding: 15px 20px;
+	font-family:"Rowdies", "cursive";
+}
+.nav-links ul li a{
+	
+	text-decoration: none;
+	font-size: 16px;
+}
+.nav-links ul li a.active {
+	border-bottom: 3px solid #922c40;
+	font-weight: bold;
+}
+.nav-links ul li::after{
+	content: '';
+	width: 0%;
+	height: 2px;
+	background:  #922c40;
+	border: #922c40;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+	width:100%
+}
+@media(max-width:1400px)  {
+	nav{
+		width: 80%;
+	}
+	.nav-links ul{
+		justify-self: space-around;
+	}
+	
+	.nav-links ul li{
+		padding: 10px 15px ;
+	}
+}
+
+/*--------------------------FOOTER---------------------------*/
+footer{
+	width: 100%;
+	text-align:center;
+    
+}
+footer h4, h5{
+	margin-top: 20px;
+	margin-bottom:10px;
+	margin-top:10px;
+
+	font-weight: 600;
+
+}
+.footer-bottom {
+	text-align: center;
+	padding: 15px 0;
+	font-size: 14px;
+	color: #777;
+	background-color: #faefe0;
+}
+	
+	
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .notification {
+            background: #fffae6;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border-left: 5px solid #ffcc00;
+            display: none;
+			PADDING: 25px
+        }
+        .booking {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .accept, .decline {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+        .accept {
+            background: #28a745;
+        }
+        .accept:hover {
+            background: #218838;
+        }
+        .decline {
+            background: #dc3545;
+        }
+        .decline:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+
+<header>
+    <nav> 
+        <a href="Provider_Homepage.html"><img id="logo"src="img/HadhiqBG.png"></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="Provider_Homepage.html">Home</a></li>
+                <li><a href="UpCoomingBooking.html" class = "active">Upcoming Bookings</a></li>
+                <li><a href="profileS.html">Profile</a></li>
+                <li><a href="index.html">Log out</a></li>
+            </ul>
+      </div>
+    </nav>
+<br><br>
+</header>
+<body>
+    <div class="container">
+        <h2> Upcoming Bookings</h2>
+
+        <!-- Notification for new booking requests -->
+        <div id="notification" class="notification">
+            📢 <strong>New Booking Request Received!</strong> Check the details below and take action.
+        </div>
+
+        <div class="booking">
+            <div>
+                <p><strong>Customer:</strong> Sarah A.</p>
+                <p><strong>Date:</strong> March 15, 2025</p>
+                <p><strong>Time:</strong> 10:30 AM</p>
+                <p><strong>Service:</strong> Plumbing Repair</p>
+            </div>
+            <div class="buttons">
+                <button class="accept" onclick="handleBooking(this, 'accepted')">Accept</button>
+                <button class="decline" onclick="handleBooking(this, 'declined')">Decline</button>
+            </div>
+        </div>
+        
+        <div class="booking">
+            <div>
+                <p><strong>Customer:</strong> Ahmed K.</p>
+                <p><strong>Date:</strong> March 20, 2025</p>
+                <p><strong>Time:</strong> 2:00 PM</p>
+                <p><strong>Service:</strong> Electrical Installation</p>
+            </div>
+            <div class="buttons">
+                <button class="accept" onclick="handleBooking(this, 'accepted')">Accept</button>
+                <button class="decline" onclick="handleBooking(this, 'declined')">Decline</button>
+            </div>
+        </div>
+
+        <div class="booking">
+            <div>
+                <p><strong>Customer:</strong> Fatima Z.</p>
+                <p><strong>Date:</strong> March 22, 2025</p>
+                <p><strong>Time:</strong> 4:15 PM</p>
+                <p><strong>Service:</strong> Home Cleaning</p>
+            </div>
+            <div class="buttons">
+                <button class="accept" onclick="handleBooking(this, 'accepted')">Accept</button>
+                <button class="decline" onclick="handleBooking(this, 'declined')">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to display notification when bookings are available
+        function showNotification() {
+            document.getElementById('notification').style.display = 'block';
+        }
+
+        // Display notification when the page loads
+        window.onload = function () {
+            showNotification();
+        };
+
+        // Function to handle Accept/Decline actions
+        function handleBooking(button, status) {
+            let booking = button.closest('.booking');
+            let buttonsContainer = button.parentElement;
+            buttonsContainer.innerHTML = ''; // Remove buttons
+
+            if (status === 'accepted') {
+                booking.style.background = '#d4edda';
+                booking.innerHTML += '<p style="color: green; font-weight: bold;">✔ Accepted </p>';
+            } else {
+                booking.style.background = '#f8d7da';
+                booking.innerHTML += '<p style="color: red; font-weight: bold;">✖ Declined </p>';
+            }
+
+            // Simulate customer notification (for future integration)
+            alert(`Customer has been ${status}.`);
+        }
+    </script>
+</body>
+<footer>
+        <hr>
+                
+        <h4>Contact Us At: </h4>
+        <h4>support@Hadhiq.com</h4>
+        <br>
+        <div class="footer-bottom">
+            © 2025 Hadhiq - All Rights Reserved
+        </div>
+    </footer>
+
+</html>

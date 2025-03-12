@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Booking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Rowdies", "cursive";
+            color: #004369;
+        }
+        html, body {
+            margin:0px;
+            height:100%;
+            bottom:100%;
+        }
+        body {
+            background-color: #fff9f0;
+            box-sizing: border-box;
+            
+        }
+        
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+			margin: 20px 0 20px 180px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #dc9750
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 8px;
+        }
+        #re {
+            list-style-type: none;
+            padding: 0;
+        }
+        #re{
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #dc9750;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #dc9750;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #004369;
+        }
+        .booking-form, .confirmation-message {
+            display: none;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .booking-form input, .booking-form button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .confirmation-message {
+            text-align: center;
+            font-size: 18px;
+            color: #004369;
+        }
+
+body {
+    background-color: #fff9f0 !important;
+	
+	box-sizing: border-box;
+	
+}
+.headers{
+	min-height: 40%;
+	width: 100%;    
+	                  
+}
+#logo{
+	max-width:170px;
+}
+nav{
+	display: flex;
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+.nav-links{
+	flex: 1;
+	text-align: right;
+}
+
+.nav-links ul{
+	display: flex;
+	justify-content: flex-end;
+	white-space: nowrap;
+	width: 100%;
+	
+}
+
+.nav-links ul li {
+	display: inline-block;
+	padding: 15px 20px;
+	font-family:"Rowdies", "cursive";
+}
+.nav-links ul li a{
+	
+	text-decoration: none;
+	font-size: 16px;
+}
+.nav-links ul li a.active {
+	border-bottom: 3px solid #922c40;
+	font-weight: bold;
+}
+.nav-links ul li::after{
+	content: '';
+	width: 0%;
+	height: 2px;
+	background:  #922c40;
+	border: #922c40;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+	width:100%
+}
+@media(max-width:1400px)  {
+	nav{
+		width: 80%;
+	}
+	.nav-links ul{
+		justify-self: space-around;
+	}
+	
+	.nav-links ul li{
+		padding: 10px 15px ;
+	}
+}
+/* /--------------------------FOOTER---------------------------/ */
+footer{
+	width: 100%;
+	text-align:center;
+    
+}
+footer h4, h5{
+	margin-top: 20px;
+	margin-bottom:10px;
+	margin-top:10px;
+
+	font-weight: 600;
+
+}
+
+.footer-bottom {
+	text-align: center;
+	padding: 15px 0;
+	font-size: 14px;
+	color: #777;
+	background-color: #faefe0;
+}
+    </style>
+</head>
+<nav> 
+    <a href="Customer_Homepage.html"><img id="logo"src="img/HadhiqBG.png"></a>
+    <div class="nav-links">
+        <ul >
+            <li><a href="Customer_Homepage.html">Home</a></li>
+            <li><a href="Service_Booking.html"  class = "active">Book a Service</a></li>
+            <li><a href="MyBooking.html">My Bookings</a></li>
+            <li><a href="profileC.html">Profile</a></li>
+            <li><a href="index.html">Log out</a></li>
+
+
+        </ul>
+    </div>
+</nav>
+<body>
+    <div class="container">
+        <h1>Service Booking Page</h1>
+
+        <section class="section">
+            <h2>Service Information</h2>
+            <p>Service Type: Light Bulb Repair</p>
+        </section>
+
+        <section class="section">
+            <h2>Service Provider Information</h2>
+            <p>Name: Mohamed Ali</p>
+            <p>Age: 35 years</p>
+            <p>Location: Riyadh, Saudi Arabia</p>
+        </section>
+
+        <section class="section">
+            <h2>Customer Reviews</h2>
+            <ul id="re">
+                <li id="re">"Excellent service!" - Fatima</li>
+                <li id ="re">"Quick and precise repair." - Ahmed</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Available Days and Times</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Morning Session</th>
+                        <th>Evening Session</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sunday</td>
+                        <td><button onclick="showBookingForm(this, 'Sunday - Morning')">9:00 AM - 12:00 PM</button></td>
+                        <td><button onclick="showBookingForm(this, 'Sunday - Evening')">4:00 PM - 7:00 PM</button></td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td><button onclick="showBookingForm(this, 'Monday - Morning')">9:00 AM - 12:00 PM</button></td>
+                        <td><button onclick="showBookingForm(this, 'Monday - Evening')">4:00 PM - 7:00 PM</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div id="bookingForm" class="booking-form">
+            <h2>Confirm Your Booking</h2>
+            <form onsubmit="confirmBooking(event)">
+                <label for="customerName">Full Name</label>
+                <input type="text" id="customerName" placeholder="Enter your name" required>
+
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" placeholder="Enter your phone number" required>
+
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="Enter your location" required>
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+
+        <div id="confirmationMessage" class="confirmation-message">
+            Thank you! Your booking has been confirmed.
+        </div>
+    </div>
+
+    <script>
+        let selectedButton = null;
+
+        function showBookingForm(button, session) {
+            selectedButton = button;
+            const form = document.getElementById('bookingForm');
+            form.style.display = 'block';
+            form.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function confirmBooking(event) {
+            event.preventDefault();
+            document.getElementById('bookingForm').style.display = 'none';
+            const confirmation = document.getElementById('confirmationMessage');
+            confirmation.style.display = 'block';
+            confirmation.scrollIntoView({ behavior: 'smooth' });
+            if (selectedButton) {
+                selectedButton.textContent = 'Booked';
+                selectedButton.disabled = true;
+                selectedButton.style.backgroundColor = '#ccc';
+                selectedButton.style.cursor = 'not-allowed';
+            }
+        }
+    </script>
+</body>
+<footer>
+    <hr>
+    <h4>Contact Us At: </h4>
+    <h4>support@Hadhiq.com</h4>
+    <br>
+    <div class="footer-bottom">
+        © 2025 Hadhiq - All Rights Reserved
+    </div>
+</footer>
+</html>

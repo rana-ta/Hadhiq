@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hathiq</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="style2.css">
+    <script src="script.js" defer></script>
+    <style>
+                * {
+            margin: 0;
+            padding: 0;
+            font-family: "Rowdies", "cursive";
+            color: #004369;
+        }
+        html, body {
+        margin:0px;
+        height:100%;
+        bottom:100%;
+        }
+        .navbar{
+            background-color: #004369;
+            color: #004369 !important; 
+        }
+        body {
+            background-color: #fff9f0;
+            box-sizing: border-box;
+            
+        }
+        .signup, .provider-signup { display: none; }
+        .form-popup .form-box {
+            display: flex;
+            align-items: stretch;
+        }
+        #logo{
+	max-width:170px;
+}
+        .form-box .form-details {
+            width: 40%;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #070707;  
+            background: url("images/login-img.jpg") center/cover no-repeat;
+        }
+
+        .form-box .form-content {
+            width: 60%;
+            padding: 35px;
+            max-height: 600px;
+            overflow-y: auto; 
+        }
+
+        .form-popup.show-signup .login .form-details,
+        .form-popup.show-signup .signup .form-details,
+        .form-popup.show-signup .provider-signup .form-details {
+            display: flex;
+        }
+        .headerimg{
+	background: url('img/header.jpg') no-repeat center center/cover;
+	height: 70vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	margin-top: 30px;
+}
+/*--------------------------FOOTER---------------------------*/
+footer{
+	width: 100%;
+	text-align:center;
+    
+}
+footer h4, h5{
+	margin-top: 20px;
+	margin-bottom:10px;
+	margin-top:10px;
+
+	font-weight: 600;
+
+}
+
+.footer-bottom {
+	text-align: center;
+	padding: 15px 0;
+	font-size: 14px;
+	color: #777;
+	background-color: #faefe0;
+}
+    </style>
+</head>
+<body>
+       
+    <header >
+        
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded">menu</span>
+            <a href="#" class="logo">
+                <img src="img/HadhiqBG.png" alt="logo" id="logo">
+                <h2>Hadhiq</h2>
+            </a>
+            <ul class="links">
+                <span class="close-btn material-symbols-rounded">close</span>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <button class="login-btn" id="login-btn">LOG IN</button>
+        </nav>
+    </header>
+<div class="headerimg"></div>
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn material-symbols-rounded">close</span>
+
+        <!-- Login Form -->
+        <div class="form-box login" id="login-form">
+            <div class="form-details">
+                <h2>Welcome Back</h2>
+                <p>Please log in using your personal information to stay connected with us.</p>
+            </div>
+            <div class="form-content">
+                <h2>LOGIN</h2>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" class= "texeInput" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class= "texeInput" required>
+                        <label>Password</label>
+                    </div>
+                    <a href="#" class="forgot-pass-link">Forgot password?</a>
+                    <button type="submit" onclick="DirectToHomepage()">Log In</button>
+                    <script>
+                      
+                        function DirectToHomepage(){
+                            event.preventDefault();
+                            let loginInput = document.querySelector(".texeInput").value.trim();
+                            if ( loginInput ===""){
+                                alert("Please Fill your Information")
+                            }else{
+                            window.location.href="Customer_Homepage.html"
+                            }
+                        }   
+                    </script>
+                </form>
+                <div class="bottom-link">
+                    Don't have an account?
+                    <a href="#" id="signup-link">Sign Up</a>
+                </div>
+                <div class="bottom-link">
+                    Are you a provider?
+                    <a href="#" id="provider-signup-link">Sign Up as Provider</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Regular Sign Up Form -->
+        <div class="form-box signup" id="signup-form">
+            <div class="form-details">
+                <h2>Create Account</h2>
+                <p>Please sign up using your personal information.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGN UP</h2>
+                <form action="#" >
+                    <div class="input-field">
+                        <input type="text" class= "textInput1" required>
+                        <label>Enter your email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class= "textInput1" required>
+                        <label>Create password</label>
+                    </div>
+                    <div class="policy-text">
+                        <input type="checkbox" class= "textInput1" id="policy">
+                        <label for="policy">
+                            I agree to the
+                            <a href="#" class="option">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <button type="submit" onclick=DirectToHomepage1() >Sign Up</button>
+                    <script>
+                      
+                        function DirectToHomepage1(){
+                           event.preventDefault();
+                            let loginInput = document.querySelector(".textInput1").value.trim();
+                            if ( loginInput ===""){
+                                alert("Please Fill your Information")
+                            }else{
+                            window.location.href="Customer_Homepage.html"
+                            }
+                        }   
+                    </script>
+                </form>
+                <div class="bottom-link">
+                    Already have an account? 
+                    <a href="#" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Provider Sign Up Form -->
+        <div class="form-box provider-signup" id="provider-signup-form">
+            <div class="form-details">
+                <h2>Create Account as Service Provider</h2>
+                <p>Please sign up using your business information to offer your services.</p>
+            </div>
+            <div class="form-content">
+                <h2>Sign Up as a Service Provider</h2>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" class="textInput2" required>
+                        <label>Full Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email"class="textInput2" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="tel" class="textInput2" required>
+                        <label>Phone Number</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" class="textInput2" required>
+                        <label>Business Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text"class="textInput2" required>
+                        <label>Business Type</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text"class="textInput2" required>
+                        <label>Business License Number</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text"class="textInput2" required>
+                        <label>Service Area</label>
+                    </div>
+                    <div class="input-field">
+                        <textarea required></textarea>
+                        <label>Service Description</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="file"class="textInput2" required>
+                        <label>Upload Work Samples</label>
+                    </div>
+                    <div class="policy-text">
+                        <input type="checkbox" id="policy-provider"class="textInput2" required>
+                        <label for="policy-provider">
+                            I agree to the
+                            <a href="#" class="option">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <button type="submit" onclick="DirectToPHomepage()">Sign Up as a Service Provider</button>
+                    <script>
+                      
+                        function DirectToPHomepage(){
+                           event.preventDefault();
+                            let loginInput = document.querySelector(".textInput2").value.trim();
+                            if ( loginInput ===""){
+                                alert("Please Fill your Information")
+                            }else{
+                            window.location.href="Provider_Homepage.html"
+                            }
+                        }   
+                    </script>
+                
+                </form>
+                <div class="bottom-link">
+                    Already have an account? 
+                    <a href="#" id="login-link-2">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginForm = document.getElementById("login-form");
+            const signupForm = document.getElementById("signup-form");
+            const providerSignupForm = document.getElementById("provider-signup-form");
+
+            const loginBtn = document.getElementById("login-btn");
+            const signupLink = document.getElementById("signup-link");
+            const providerSignupLink = document.getElementById("provider-signup-link");
+            const loginLinks = document.querySelectorAll("#login-link, #login-link-2");
+
+            // Show Sign Up Form
+            signupLink.addEventListener("click", function (e) {
+                e.preventDefault();
+                signupForm.style.display = "block";
+                providerSignupForm.style.display = "none";
+                loginForm.style.display = "none";
+            });
+
+            // Show Provider Sign Up Form
+            providerSignupLink.addEventListener("click", function (e) {
+                e.preventDefault();
+                providerSignupForm.style.display = "block";
+                signupForm.style.display = "none";
+                loginForm.style.display = "none";
+            });
+
+            // Show Login Form
+            loginBtn.addEventListener("click", function () {
+                loginForm.style.display = "block";
+                signupForm.style.display = "none";
+                providerSignupForm.style.display = "none";
+            });
+
+            // Show Login Form from Sign Up Forms
+            loginLinks.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    loginForm.style.display = "block";
+                    signupForm.style.display = "none";
+                    providerSignupForm.style.display = "none";
+                });
+            });
+        });
+    </script>
+</body>
+<footer>
+    <hr>
+    
+    
+    <h4>Contact Us At: </h4>
+    <h4>support@Hadhiq.com</h4>
+   
+    <br>
+    <div class="footer-bottom">
+        © 2025 Hadhiq - All Rights Reserved
+    </div>
+</footer>
+</html>
